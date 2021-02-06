@@ -46,17 +46,30 @@ public class BallShooterConstants {
 	
 	public static final TreeMap<Integer, double[]> targetPercent2ShooterParms = new TreeMap<Integer, double[]>() {
 		private static final long serialVersionUID = 1L;
-		{	   //target						Hood
-			   //percentage			RPMs	Encoder
-			put( 350, new double[] { -3360, 4500 });
-			put( 200, new double[] { -3675, 4400 });
-			put( 134, new double[] { -3832, 4250});
-			put( 100, new double[] { -3990, 4100 });
-			put( 70, new double[] { magicRPMS, 3400 }); // magic spot
-			put( 25, new double[] { -5250, 2700 });
-			put( 0, new double[] { -4725, 3400 });
+		// {	   //target						Hood
+		// 	   //percentage			RPMs	Encoder
+		// 	put( 350, new double[] { -3360, 4500 });
+		// 	put( 200, new double[] { -3675, 4400 });
+		// 	put( 134, new double[] { -3832, 4250});
+		// 	put( 100, new double[] { -3990, 4100 });
+		// 	put( 70, new double[] { magicRPMS, 3400 }); // magic spot
+		// 	put( 25, new double[] { -5250, 2700 });
+		// 	put( 0, new double[] { -4725, 3400 });
 
-		}
+		// }
+		{	   //target						Hood
+			//percentage			RPMs	Encoder
+		 put( 350, new double[] { -3360, 4500 });
+		 put( 219, new double[] { -4000, 4060});
+		 put( 200, new double[] { -3675, 4400 });
+		 put( 134, new double[] { -3832, 4250});
+		 put( 110, new double[] { -4300, 4100 });
+		 put( 100, new double[] { -3990, 4100 });
+		 put( 70, new double[] { magicRPMS, 3400 }); // magic spot
+		 put( 25, new double[] { -5250, 2700 });
+		 put( 0, new double[] { -4800, 3900 });
+
+	 }
 	};
 	
 	
@@ -89,13 +102,13 @@ public class BallShooterConstants {
 	 * Position the hood is moved to when idleing.  This should be 0 or stowed so that we can drive under
 	 * the control panel when we are not shooting.  
 	 */
-	public static final double hoodIdlePosition = 0;
+	public static final double hoodIdlePosition = 4020;
 	
 	/**
 	 * Velocity in RPMs that the robot should idle at when not using the shooter.  This is for 
 	 * conservation of energy and time so that we don't need to spin up each time we try to shoot.
 	 */
-	public static final double shootIdleVelocity = -2500;
+	public static final double shootIdleVelocity = -4000;
 	public static final double shootClimbVelocity = 0;
 
 	}
