@@ -11,6 +11,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.BallShooterConstants;
 import frc.robot.LimelightUtility;
 import frc.robot.Robot;
@@ -57,9 +58,11 @@ public class teleopAutoShootCMD extends Command {
             System.out.println("No target");
             area = 70;
         }  
-        rpms = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[0];
-        hoodEncoderUnits = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[1];
-
+        //rpms = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[0];
+        rpms = SmartDashboard.getNumber("sdShoot RPMS", 0);
+        //hoodEncoderUnits = BallShooterConstants.targetPercent2ShooterParms.floorEntry((int)area).getValue()[1];
+        hoodEncoderUnits = SmartDashboard.getNumber("sdHood Position", 0);
+        
         numberOfBalls = Robot.ballIndexer.ballCount(); 
         //Robot.ballShooter.prepareToShoot(rpms,hoodEncoderUnits);
         setTimeout(BallShooterConstants.teleopAutoShootCmdTimeout);
