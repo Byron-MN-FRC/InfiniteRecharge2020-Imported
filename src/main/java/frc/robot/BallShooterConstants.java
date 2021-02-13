@@ -96,13 +96,15 @@ public class BallShooterConstants {
 	 * Position the hood is moved to when idleing.  This should be 0 or stowed so that we can drive under
 	 * the control panel when we are not shooting.  
 	 */
-	public static final double hoodIdlePosition = 4200;
+	public static final double hoodIdlePosition = 0;
+	public static final double hoodShootPosition = 4200;
 	
 	/**
 	 * Velocity in RPMs that the robot should idle at when not using the shooter.  This is for 
 	 * conservation of energy and time so that we don't need to spin up each time we try to shoot.
 	 */
-	public static final double shootIdleVelocity = -4000;
+	public static final double shootIdleVelocity = 0;
+	public static final double shootDefultVelocity = -4000;
 	public static final double shootClimbVelocity = 0;
 
 	}

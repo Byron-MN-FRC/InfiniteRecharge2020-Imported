@@ -161,10 +161,12 @@ addChild("limitSwitchDown",limitSwitchDown);
         if (inAuton) {
             // masterShootRPM = BallShooterConstants.magicRPMS;
             masterShootRPM = BallShooterConstants.shootIdleVelocity;
-        } else if (Timer.getMatchTime() != -1) {
-            masterShootRPM = BallShooterConstants.shootIdleVelocity;
+        /* } else if (Timer.getMatchTime() != -1) {
+            masterShootRPM = BallShooterConstants.shootIdleVelocity; */
         } else if (teleopWithIdle) {
-            masterShootRPM = BallShooterConstants.shootIdleVelocity;
+            masterShootRPM = BallShooterConstants.shootDefultVelocity;
+            masterHoodPos = BallShooterConstants.hoodShootPosition;
+
         } else {
             masterShootRPM = BallShooterConstants.shootIdleVelocity;
         }
