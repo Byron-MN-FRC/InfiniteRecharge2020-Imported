@@ -173,31 +173,24 @@ tankDrive.setMaxOutput(1.0);
         // limit the turn to the square of the number. Keep signs straight use ? :
         // syntax
 
-        twist = (twist < 0) ? -Math.pow(Deadband(twist), 2) : Math.pow(Deadband(twist), 2);
-
-        if (Robot.shifter.highGear == true) {
-            double max = .7;
-            leftMaster.configPeakOutputForward(max, Constants.kTimeoutMs);
-            leftMaster.configPeakOutputReverse(-max, Constants.kTimeoutMs);
-            rightMaster.configPeakOutputForward(max, Constants.kTimeoutMs);
-            rightMaster.configPeakOutputReverse(-max, Constants.kTimeoutMs);
-      //      y = ThrottleLookup.calcJoystickCorrection("HighGearRamp", y);
-            // twist = ThrottleLookup.calcJoystickCorrection("HighGearTurn", twist);
-       //     twist = (twist < 0) ? -Math.pow(Deadband(twist), 2) : Math.pow(Deadband(twist), 2);
-            tankDrive.arcadeDrive(y, -twist);
-        } else {
-            double max = .4;
-            double maxxx = 1.0;
-            leftMaster.configPeakOutputForward(max, Constants.kTimeoutMs);
-            leftMaster.configPeakOutputReverse(-maxxx, Constants.kTimeoutMs);
-            rightMaster.configPeakOutputForward(max, Constants.kTimeoutMs);
-            rightMaster.configPeakOutputReverse(-maxxx, Constants.kTimeoutMs);
-        //    y = ThrottleLookup.calcJoystickCorrection("LowGearRamp", y);
-        //    twist = ThrottleLookup.calcJoystickCorrection("LowGearTurn", twist);
-            tankDrive.arcadeDrive(y, -twist);
+        // twist = (twist < 0) ? -Math.pow(Deadband(twist), 2) : Math.pow(Deadband(twist), 2);
+ double max = 1.0;
+        if (Robot.shifter.highGear == true){
+            max = .7;
+            leftMaster.configOpenloopRamp(.75,Constants.kTimeoutMs);
+            rightMaster.configOpenloopRamp(.75,Constants.kTimeoutMs);
+        }else { 
+            leftMaster.configOpenloopRamp(.5,Constants.kTimeoutMs);
+            rightMaster.configOpenloopRamp(.5,Constants.kTimeoutMs);
         }
 
+        leftMaster.configPeakOutputForward(max, Constants.kTimeoutMs);
+        leftMaster.configPeakOutputReverse(-max, Constants.kTimeoutMs);
+        rightMaster.configPeakOutputForward(max, Constants.kTimeoutMs);
+        rightMaster.configPeakOutputReverse(-max, Constants.kTimeoutMs);
+        tankDrive.arcadeDrive(y,  -twist);        
     }
+
 
     public void motorConfig() {
         motorConfigFalcon();
