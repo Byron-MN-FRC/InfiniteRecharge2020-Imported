@@ -164,7 +164,8 @@ addChild("limitSwitchDown",limitSwitchDown);
         } else if (Timer.getMatchTime() != -1) {
             masterShootRPM = -2500;
         } else if (teleopWithIdle) {
-            masterShootRPM = -2500;
+            masterShootRPM = BallShooterConstants.shootDefaultVelocity;
+            masterHoodPos = BallShooterConstants.hoodShootPosition;
         } else {
             masterShootRPM = 0;
         }
