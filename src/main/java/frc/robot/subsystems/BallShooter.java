@@ -164,7 +164,8 @@ addChild("limitSwitchDown",limitSwitchDown);
         } else if (Timer.getMatchTime() != -1) {
             masterShootRPM = -2500;
         } else if (teleopWithIdle) {
-            masterShootRPM = -2500;
+            masterShootRPM = BallShooterConstants.shootDefaultVelocity;
+            masterHoodPos = BallShooterConstants.hoodShootPosition;
         } else {
             masterShootRPM = 0;
         }
@@ -524,7 +525,7 @@ addChild("limitSwitchDown",limitSwitchDown);
         // hoodMotor.configPeakCurrentDuration(300);
         // hoodMotor.enableCurrentLimit(true);
 
-        hoodMotor.set(ControlMode.PercentOutput, -0.6);
+        hoodMotor.set(ControlMode.PercentOutput, 0.6);
         // check to see if the limit switch is trippped.
         boolean limitReached = !this.limitSwitchDown.get();
 
