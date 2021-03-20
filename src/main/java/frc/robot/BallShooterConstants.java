@@ -6,7 +6,7 @@ import java.util.TreeMap;
 
 public class BallShooterConstants {
 	//hood  Constants 
-	public final static double kHoodUpEncoderMax = 3900;
+	public final static double kHoodUpEncoderMax = -3900;
 	public final static double kHoodPositionTolerance = 230;
 	
 	// Shoot motor Constants
@@ -48,13 +48,13 @@ public class BallShooterConstants {
 		private static final long serialVersionUID = 1L;
 		{	   //target						Hood
 			   //percentage			RPMs	Encoder
-			put( 350, new double[] { -3360, 4500 });
-			put( 200, new double[] { -3675, 4400 });
-			put( 134, new double[] { -3832, 4250});
-			put( 100, new double[] { -3990, 4100 });
-			put( 70, new double[] { magicRPMS, 3400 }); // magic spot
-			put( 25, new double[] { -5250, 2700 });
-			put( 0, new double[] { -4725, 3400 });
+			put( 350, new double[] { -3360, -4500 });
+			put( 200, new double[] { -3675, -4400 });
+			put( 134, new double[] { -3832, -4250});
+			put( 100, new double[] { -3990, -4100 });
+			put( 70, new double[] { magicRPMS, -3400 }); // magic spot
+			put( 25, new double[] { -5250, -2700 });
+			put( 0, new double[] { -4725, -3400 });
 
 		}
 	};
